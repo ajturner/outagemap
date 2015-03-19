@@ -40,14 +40,27 @@
       maxZoom: 18
       }).addTo(map);
 
+function whenClicked(e) {
+  // e = event
+document.getElementById('call').setAttribute('href', 'tel:' + this.feature.properties.phone);
+  // You can make your ajax call declaration here
+  //$.ajax(... 
+}
+
  function popUp(feature, layer) {
-    document.getElementById('call').setAttribute('href', 'tel:' + feature.properties.phone);
+    layer.on({
+    click: whenClicked
+});
  //   layer.bindPopup(feature.properties.phone);
   }
 
-var geojsonLayer = new L.GeoJSON.AJAX("../data/ne-utilities.geojson", {onEachFeature:popUp});
+//var geojsonLayer = new L.GeoJSON.AJAX("../data/ne-utilities.geojson"); //, {onClick:popUp});
+  var geojsonLayer = new L.GeoJSON.AJAX("../data/ne-utilities.geojson", {
+onEachFeature : popUp });
         geojsonLayer.addTo(map);
-
+//geojson.on('click', function(evt) {
+//    document.getElementById('call').setAttribute('href', 'tel:' + feature.properties.phone);
+//});
       map.locate({setView: true, maxZoom: 16});
 
       function onLocationFound(e) {
