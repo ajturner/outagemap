@@ -1,0 +1,71 @@
+{
+  "editor": {
+    "enableUndoRedo": true,
+    "toolbarVisible": true,
+    "toolbarOptions": {
+      "mergeVisible": true,
+      "cutVisible": true,
+      "reshapeVisible": true
+    },
+    "layerInfos": [
+      {
+        "featureLayer": {
+          "url": "http://services.arcgis.com/bkrWlSKcjUDFDtgw/arcgis/rest/services/Northeast_Utilities/FeatureServer/0"
+        },
+        "disableGeometryUpdate": false,
+        "fieldInfos": [
+          {
+            "fieldName": "FID",
+            "label": "FID",
+            "isEditable": true
+          },
+          {
+            "fieldName": "twitter",
+            "label": "twitter",
+            "isEditable": true
+          },
+          {
+            "fieldName": "customersS",
+            "label": "customersS",
+            "isEditable": true
+          },
+          {
+            "fieldName": "phone",
+            "label": "phone",
+            "isEditable": true
+          },
+          {
+            "fieldName": "website",
+            "label": "website",
+            "isEditable": true
+          },
+          {
+            "fieldName": "accountLog",
+            "label": "accountLog",
+            "isEditable": true
+          },
+          {
+            "fieldName": "outageMap",
+            "label": "outageMap",
+            "isEditable": true
+          },
+          {
+            "fieldName": "facebook",
+            "label": "facebook",
+            "isEditable": true
+          },
+          {
+            "fieldName": "regionName",
+            "label": "regionName",
+            "isEditable": true
+          },
+          {
+            "fieldName": "utilityNam",
+            "label": "utilityNam",
+            "isEditable": true
+          }
+        ]
+      }
+    ]
+  }
+}
