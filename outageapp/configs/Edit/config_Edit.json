@@ -3,65 +3,78 @@
     "enableUndoRedo": true,
     "toolbarVisible": true,
     "toolbarOptions": {
-      "mergeVisible": true,
-      "cutVisible": true,
-      "reshapeVisible": true
+      "mergeVisible": false,
+      "cutVisible": false,
+      "reshapeVisible": false
     },
     "layerInfos": [
       {
         "featureLayer": {
-          "url": "http://services.arcgis.com/bkrWlSKcjUDFDtgw/arcgis/rest/services/Northeast_Utilities/FeatureServer/0"
+          "url": "http://services.arcgis.com/bkrWlSKcjUDFDtgw/arcgis/rest/services/Power_Service_Provider_Issues/FeatureServer/0"
         },
         "disableGeometryUpdate": false,
         "fieldInfos": [
           {
-            "fieldName": "FID",
-            "label": "FID",
+            "fieldName": "OBJECTID",
+            "label": "OBJECTID",
             "isEditable": true
           },
           {
-            "fieldName": "twitter",
-            "label": "twitter",
+            "fieldName": "status",
+            "label": "Status",
             "isEditable": true
           },
           {
-            "fieldName": "customersS",
-            "label": "customersS",
+            "fieldName": "field",
+            "label": "Incorrect Information",
+            "isEditable": true
+          }
+        ]
+      },
+      {
+        "featureLayer": {
+          "url": "http://services.arcgis.com/bkrWlSKcjUDFDtgw/arcgis/rest/services/First_Responder_Outage_Information/FeatureServer/0"
+        },
+        "disableGeometryUpdate": false,
+        "fieldInfos": [
+          {
+            "fieldName": "OBJECTID",
+            "label": "OBJECTID",
             "isEditable": true
           },
           {
-            "fieldName": "phone",
-            "label": "phone",
+            "fieldName": "status",
+            "label": "Status",
             "isEditable": true
           },
           {
-            "fieldName": "website",
-            "label": "website",
+            "fieldName": "created_at",
+            "label": "Occurred At",
             "isEditable": true
           },
           {
-            "fieldName": "accountLog",
-            "label": "accountLog",
+            "fieldName": "building_count",
+            "label": "Buildings Affected",
             "isEditable": true
           },
           {
-            "fieldName": "outageMap",
-            "label": "outageMap",
+            "fieldName": "CreationDate",
+            "label": "CreationDate",
             "isEditable": true
           },
           {
-            "fieldName": "facebook",
-            "label": "facebook",
+            "fieldName": "Creator",
+            "label": "Creator",
             "isEditable": true
           },
           {
-            "fieldName": "regionName",
-            "label": "regionName",
+            "fieldName": "EditDate",
+            "label": "EditDate",
             "isEditable": true
           },
           {
-            "fieldName": "utilityNam",
-            "label": "utilityNam",
+            "fieldName": "Editor",
+            "label": "Editor",
             "isEditable": true
           }
         ]
