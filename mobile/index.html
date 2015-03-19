@@ -10,7 +10,7 @@
  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script type="text/javascript" src="http://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
 <section id="wrapper">
@@ -20,8 +20,12 @@
     </header>
 <meta name="viewport" content="width=620" />
 
-  <a id="call" href="tel:">Call Now</a>
-  <a id="twitter" href="tel:">Twitter</a>
+<ul>
+<li>  <a id="call" href="tel:">Call Now</a></li>
+<li>  <a id="twitter" href="tel:">Twitter</a></li>
+<li> <a id="wrong_tel" onclick="reportProblem('phone')">Report wrong number</a></li>
+<li> <a id="wrong_twitter" onclick="reportProblem('twitter')">Report wrong twitter</a></li>
+</ul>
 <div style="width:400px; height:560px" id="map"></div>
 <script type='text/javascript'>
 
@@ -39,6 +43,15 @@
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
       maxZoom: 18
       }).addTo(map);
+
+function reportProblem(k) {
+  var latlng = map.getCenter();
+$.post("http://services.arcgis.com/bkrWlSKcjUDFDtgw/arcgis/rest/services/Power_Service_Provider_Issues/FeatureServer/0/addFeatures",
+   {"f":"json",
+         "features":JSON.stringify([{"attributes": {"field": k,"created_at": 1426651200000,"status": "open"},"geometry": {"x" : latlng.lng, "y" : latlng.lat}}])
+        });
+  return false;
+}
 
 function whenClicked(e) {
   // e = event
@@ -74,6 +87,7 @@ onEachFeature : popUp });
       }
 
       map.on('locationfound', onLocationFound);
+      $(document.elementFromPoint(200, 200)).click();  
 
   }else {
       alert("Geolocation API is not supported in your browser. :(");
