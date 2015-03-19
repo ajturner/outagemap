@@ -21,7 +21,7 @@
 <meta name="viewport" content="width=620" />
 
   <a id="call" href="tel:">Call Now</a>
-
+  <a id="twitter" href="tel:">Twitter</a>
 <div style="width:400px; height:560px" id="map"></div>
 <script type='text/javascript'>
 
@@ -43,6 +43,7 @@
 function whenClicked(e) {
   // e = event
 document.getElementById('call').setAttribute('href', 'tel:' + this.feature.properties.phone);
+document.getElementById('twitter').setAttribute('href', this.feature.properties.twitter);
   // You can make your ajax call declaration here
   //$.ajax(... 
 }
